@@ -1,0 +1,22 @@
+{% extends 'layouts/index.html' %}
+
+{% block content %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{ post_id.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ post_id.title }}</h5>
+      <p class="card-text">{{post_id.description}}</p>
+      {% for hashtags in post.hashtags.all %}
+          <p>{{ hashtag.title}}</p>
+      {% endfor %}
+    <div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{post_id.type_book }}</li>
+      <li class="list-group-item">{{post_id.cost }}</li>
+      <li class="list-group-item">{{post_id.director }}</li>
+      <li class="list-group-item">{{post_id.number_of_page }}</li>
+      <li class="list-group-item">{{post_id.date_start }}</li>
+      <li class="list-group-item">{{post_id.created_at }}</li>
+    </ul>
+  </div>
+ {% endblock %}
